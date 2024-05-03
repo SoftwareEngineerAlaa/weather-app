@@ -3,7 +3,7 @@
 ![Weather App Banner](src/assets/WeatherAppScreenshot.png)
 
 This is a simple weather app that allows users to search for cities and view the current weather as well as a short forecast for the upcoming days.<br>
-[Click Here to View Demo](https://weatherapp-alaa.netlify.app/)
+[Click Here to View Demo](https://weatherapp-tahhan.netlify.app/)
 
 ## Features
 
