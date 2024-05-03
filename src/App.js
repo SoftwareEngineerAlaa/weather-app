@@ -70,7 +70,7 @@ function App() {
   const fetchWeatherData = (latitude, longitude) => {
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=519f1ab024e321851b421d162202285d`
+        `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}`
       )
       .then((res) => {
         setWeather(res.data);
@@ -93,7 +93,7 @@ function App() {
   const fetchCityName = (latitude, longitude) => {
     axios
       .get(
-        `https://api.api-ninjas.com/v1/reversegeocoding?lat=${latitude}&lon=${longitude}&X-Api-Key=xwXvnaToQoMj9CXmIROYFA==eba1pkNx6FCbgEgn`
+        `https://api.api-ninjas.com/v1/reversegeocoding?lat=${latitude}&lon=${longitude}&X-Api-Key=${process.env.REACT_APP_API_NINJAS_API_KEY}`
       )
       .then((res) => {
         setCity(res.data[0].name);
@@ -110,9 +110,6 @@ function App() {
 
   useEffect(() => {
     if (weather.weather && weather.weather.length > 0) {
-      // setIconUrl(
-      //   `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`
-      // );
       switch (weather.weather[0].icon) {
         case "01d":
           setIconUrl(img01d);
