@@ -1,0 +1,207 @@
+.App {
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 55%;
+  width: 100%;
+}
+
+.arabic,
+.english {
+  color: #c9b06b;
+  font-family: Ruby-Arabic;
+  font-weight: 600;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #141b21;
+  /* background-color: #71bbc7; */
+  height: 250px;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 #5084a3;
+  /* border: 1px solid gainsboro; */
+}
+
+.top-part {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  margin: -5px 0;
+  padding: 0;
+  width: 85%;
+  height: 70px;
+  color: white;
+  border-bottom: 1px solid gainsboro;
+}
+
+.city-name {
+  font-size: 35px;
+}
+
+.date {
+  font-size: 12px;
+  padding-top: 19px;
+}
+
+.body-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 85%;
+  height: 180px;
+  color: white;
+}
+
+.weather-illustration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+
+.weather-illustration img {
+  width: 100%;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  height: 100%;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 70px;
+  font-weight: 600;
+  height: 50%;
+  gap: 5px;
+}
+
+.temperature img {
+  width: 50px;
+}
+
+.img {
+  width: 100%;
+  height: 80%;
+}
+
+.weather-description,
+.weather-max-min {
+  font-size: 15px;
+  font-weight: 400;
+  height: 15%;
+}
+
+.changel-language {
+  font-size: 15px;
+  font-weight: 600;
+  color: #71bbc7;
+  margin-top: 15px;
+  border: 1px solid rgb(53, 53, 53);
+  border-radius: 10px;
+  width: 70px;
+  height: 27px;
+  cursor: pointer;
+}
+
+.changel-language:hover {
+  border: 1px solid #71bbc7;
+  color: white;
+}
+
+.changel-language:active {
+  border: 1px solid #71bbc7;
+  color: white;
+  box-shadow: 0 0 10px 0 #5084a3;
+}
+
+.divider {
+  color: rgb(86, 203, 203);
+}
+.loading-text {
+  color: white;
+  animation: fade 2s infinite;
+  font-size: 32px;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 12px;
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+.footer-text a {
+  color: #71bbc7;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/*** CUSTOM FONTS ***/
+@font-face {
+  font-family: Ruby-Arabic;
+  src: url("/public/fonts/rubic_font_arabic/Rubik-Light.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Ruby-Arabic;
+  src: url("/public/fonts/rubic_font_arabic/Rubik-Medium.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Ruby-Arabic;
+  src: url("/public/fonts/rubic_font_arabic/Rubik-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Ruby-Arabic;
+  src: url("/public/fonts/rubic_font_arabic/Rubik-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Ruby-Arabic;
+  src: url("/public/fonts/rubic_font_arabic/Rubik-Bold.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Ruby-Arabic;
+  src: url("/public/fonts/rubic_font_arabic/Rubik-ExtraBold.ttf");
+  font-weight: 900;
+}
