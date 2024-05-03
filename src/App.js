@@ -72,7 +72,7 @@ function App() {
     const fetchWeatherData = (latitude, longitude) => {
       axios
         .get(
-          `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}`
         )
         .then((res) => {
           setWeather(res.data);
