@@ -55,6 +55,42 @@ function App() {
   }
 
   useEffect(() => {
+    const fetchCityName = (latitude, longitude) => {
+      axios
+        .get(
+          `https://api.api-ninjas.com/v1/reversegeocoding?lat=${latitude}&lon=${longitude}&X-Api-Key=${process.env.REACT_APP_API_NINJAS_API_KEY}`
+        )
+        .then((res) => {
+          setCity(res.data[0].name);
+        })
+        .catch((err) => {
+          console.log(err);
+          setError("An error occurred. Please try again.");
+        });
+    };
+
+    const fetchWeatherData = (latitude, longitude) => {
+      axios
+        .get(
+          `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}`
+        )
+        .then((res) => {
+          setWeather(res.data);
+          fetchCityName(latitude, longitude);
+        })
+        .catch((err) => {
+          console.log(err);
+          if (err.response && err.response.status === 429) {
+            setError("Too many requests. Please try again later.");
+          } else {
+            setError("An error occurred. Please try again.");
+          }
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    };
+
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
@@ -63,50 +99,10 @@ function App() {
       (error) => {
         console.error("Error getting user location:", error);
         setError("Error getting user location. Please try again.");
+        setLoading(false);
       }
     );
   }, []);
-
-  const fetchWeatherData = (latitude, longitude) => {
-    axios
-      .get(
-        `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}`
-      )
-      .then((res) => {
-        setWeather(res.data);
-        fetchCityName(latitude, longitude);
-      })
-      .catch((err) => {
-        console.log(err);
-        if (err.response && err.response.status === 429) {
-          setError("Too many requests. Please try again later.");
-        } else {
-          setError("An error occurred. Please try again.");
-        }
-      })
-      .finally(() => {
-        setLoading(false);
-        console.log("finally");
-      });
-  };
-
-  const fetchCityName = (latitude, longitude) => {
-    axios
-      .get(
-        `https://api.api-ninjas.com/v1/reversegeocoding?lat=${latitude}&lon=${longitude}&X-Api-Key=${process.env.REACT_APP_API_NINJAS_API_KEY}`
-      )
-      .then((res) => {
-        setCity(res.data[0].name);
-      })
-      .catch((err) => {
-        console.log(err);
-        setError("An error occurred. Please try again.");
-      })
-      .finally(() => {
-        setLoading(false);
-        console.log("finally");
-      });
-  };
 
   useEffect(() => {
     if (weather.weather && weather.weather.length > 0) {
@@ -218,7 +214,7 @@ function App() {
           </div>
         </div>
       </div>
-      {/* Created by: Alaa Tahha */}
+      {/* Created by: Alaa Tahhan */}
       <div className="footer">
         <p className="footer-text">
           Created by:{" "}
