@@ -2,7 +2,7 @@
 
 ![Weather App Banner](src/assets/WeatherAppScreenshot.png)
 
-This is a simple weather app that allows users to search for cities and view the current weather as well as a short forecast for the upcoming days.<br>
+This weather app lets users check the current weather of their current city, including the minimum and maximum temperatures.<br>
 [Click Here to View Demo](https://weatherapp-tahhan.netlify.app/)
 
 ## Features
