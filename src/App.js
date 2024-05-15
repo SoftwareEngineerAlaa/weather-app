@@ -98,7 +98,7 @@ function App() {
       },
       (error) => {
         console.error("Error getting user location:", error);
-        setError("Error getting user location. Please try again.");
+        setError("Please activate location to continue.");
         setLoading(false);
       }
     );
@@ -173,7 +173,7 @@ function App() {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="error-text">{error}</div>;
   }
 
   let { temp, temp_min, temp_max } = weather.main;
