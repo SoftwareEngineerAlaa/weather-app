@@ -169,6 +169,12 @@
   font-weight: 700;
 }
 
+.error-text {
+  color: white;
+  font-weight: 700;
+}
+
+
 /*** CUSTOM FONTS ***/
 @font-face {
   font-family: Ruby-Arabic;
