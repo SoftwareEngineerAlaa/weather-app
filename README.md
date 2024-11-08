@@ -86,8 +86,7 @@ Contributions to app development are welcome. Contributors retain copyright to t
 
 **Alaa Tahhan**
 
-- [Portfolio](https://alaatahhan.netlify.app/)
-- [GitHub](https://github.com/SoftwareEngineerAlaa)
+- [GitHub Portfolio](https://github.com/SoftwareEngineerAlaa)
 - [LinkedIn](https://www.linkedin.com/in/alaa-tahhan/)
 
 Thank you for exploring the Weather App!
